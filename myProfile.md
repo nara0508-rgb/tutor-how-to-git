@@ -1,3 +1,3 @@
 # Hello! I am Nadine Ester Rajagukguk
-- *GitHub*: @nara0508-rgb
+- *GitHub*: @your-github-username
 - *Favorite Programming Language*: Python / C++ / JavaScript
