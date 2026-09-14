@@ -13,6 +13,8 @@ int main() {
     int AirMineral, TehBotol, KopiSusu;
     int Hasil;
     cout << "Pilih Kode Elemen (1-3): "; cin >> Kode;
+    cout << "Masukkan Uang Anda (Rp): "; cin >> Uang;
+
    if (Kode >= 1 && Kode <= 3) {
     switch (Kode) {
         case 1:
@@ -24,26 +26,28 @@ int main() {
             Hasil = Uang - TehBotol;
             break; 
         case 3:
-        KopiSusu = 10000; 
+            KopiSusu = 10000; 
             Hasil = Uang - KopiSusu;
             break;
     } } else {
         cout << "Error" << endl;
+        Hasil = 0;
     } 
-   
-cout << "Masukkan Uang Anda (Rp): "; cin >> Uang;
+
 cout << "=== Detail Transaksi ===" << endl;
 int Kembalian5, Kembalian1;
 Kembalian5 = (Hasil / 5000) / 1000;
 Kembalian1 = (Hasil % 5000) / 1000;
 
- if (Hasil >= 0) {
+ if (Hasil >= 0 && (Kode >= 1 && Kode <=3)) {
     cout << "Transaksi Berhasil! "; 
     cout << "Kembalian Uang Anda " << Kembalian5 << " lembar Rp5000";
     cout << " dan " << Kembalian1 << " lembar Rp1000" << endl;
-    } else {
-    cout << "Transaksi Gagal!";
+    } else if (Hasil < 0 && (Kode >= 1 && Kode <=3)){
+    cout << "Transaksi Gagal! ";
     cout << "Uang Anda kurang Rp" << -Hasil << endl;
+    } else {
+        cout << "Transaksi Gagal!";
     }
    return 0;
 }
